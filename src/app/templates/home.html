@@ -1,0 +1,16 @@
+{% extends 'boilerplate.html' %}
+
+{% block stylesheet %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">{% endblock %}
+
+{% block content %}
+    <h1>{% block title %}Home {% endblock %}</h1>
+    <p>A music recommendation system</p>
+    <p>{{ welcome_message }}</p>
+    {% if logged_in == True %}
+      {% if num_rated <= 9 %}
+      <p><a href="{{ url_for('welcome') }}?username={{ username }}">Rate {{ 10 - num_rated }} more artists</a> to get recommendations! </p>
+      {% else %}
+      <a href="{{ url_for('recommendations') }}">Get recommendations.</a>
+      {% endif %}
+    {% endif %}
+{% endblock %}

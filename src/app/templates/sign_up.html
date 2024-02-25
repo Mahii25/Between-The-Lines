@@ -1,0 +1,48 @@
+{% extends 'boilerplate.html' %}
+
+{% block stylesheet %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/add_form.css') }}">{% endblock %}
+
+{% block content %}
+    <h1>{% block title %}Sign Up {% endblock %}</h1>
+    {% if 'user' in session %}
+    <a>You're still logged in.</a>
+    <p><a href= "{{ url_for('logout') }}" >Log out</a> to sign up again.</p>
+      {% else %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div>
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+    {% endwith %}
+<form method="post">
+    <p>
+        <label for="username">Username: </label>
+        <input type="text" name="username"
+               placeholder="Username">
+        </input>
+    </p>
+    <p>
+        <label for="email">Email: </label>
+        <input type="text" name="email"
+               placeholder="example@email.com">
+        </input>
+    </p>
+    <p>
+        <label for="password">Password: </label>
+        <input type="password" name="password"
+               placeholder="Password">
+        </input>
+    </p>
+    <p>
+        <label for="password">Confirm Password: </label>
+        <input type="password" name="confirm_password"
+               placeholder="Confirm Password">
+        </input>
+    </p>
+    <p>
+        <button type="submit" class="button-basic">Submit</button>
+    </p>
+</form>
+{% endif %}
+{% endblock %}

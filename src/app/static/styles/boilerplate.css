@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+body {
+  background-color: rgb(233, 233, 243);
+  color: red;
+  /* font-family: Bebas Neue, sans-serif; */
+  font-family: 'VT323', monospace;
+  margin: 0px;
+  margin-top: 5%;
+  background-image: radial-gradient(#00d5ff 10%, transparent 10%),
+      radial-gradient(#626262 10%, transparent 10%);
+  /* background-color: #e53935; */
+  background-position: 0 0, 5px 5px;
+  background-size: 10px 10px;
+}
+
+html {
+	cursor: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" height="20" width="20"><text y="10" font-size="10">🔮</text><path d="M0,2 L0,0 L2,0" fill="red" /></svg>'), auto;
+}
+
+.content {
+  padding: 0.5em;
+  margin: 1.5em;
+  /* background-color: rgb(233, 233, 243); */
+  background-color: rgba(233, 233, 243, 0.5);
+  border: 2px solid red;
+  box-shadow: 3px 3px 20px 20px rgba(0, 89, 255, 0.1) inset;
+}
+
+.navbar {
+  width: 100%;
+  font-size: 2em;
+  height: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  /* border-radius: 20px; */
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  position: relative;
+  /* commented out but can do some stripes like below, maybe use in the loading bar */
+  /* background: repeating-linear-gradient(
+  -55deg,
+  rgb(0, 221, 255),
+  rgb(0, 221, 255) 1px,
+  rgb(50, 251, 255) 1px,
+  rgb(50, 251, 255) 15px
+); */
+}
+
+.masthead {
+  display: flex;
+  background-color: rgb(75, 240, 255);
+  margin: none;
+  padding: none;
+  width: 100%;
+}
+
+.masthead h1 {
+  color: red;
+  font-size: 1.1em;
+  /* font-family: 'Major Mono Display', monospace; */
+  font-family: 'Space Mono', monospace;
+  /* font-family: 'Chicle', cursive; */
+  /* -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: red; */
+  margin: 0;
+  padding: 0.2em;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 3vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* width: 100%; */
+}
+
+.navbar a:hover {
+    text-decoration: none;
+    /* color: black; */
+    font-size: 3vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    /* background-color: blue; */
+    /* width: 100%; */
+}
+
+.icon:hover {
+  filter: invert(1);
+}
+
+a {
+  color: blue;
+}
+
+select {
+  font-family: 'VT323', monospace;
+  font-size: medium;
+  outline: none;
+}
+
+input[type=text], input[type=password] {
+  font-family: 'VT323', monospace;
+  font-size: medium;
+}
+
+button {
+  font-family: 'VT323', monospace;
+  font-size: larger;
+  border: none;
+  padding: 0.5em;
+  background:rgb(75, 240, 255);
+}
+
+button:hover .button-basic{
+  background-color: white;
+}
+
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 666px) {
+  .navbar a {
+    display: none;
+  }
+  .content {
+    padding: none;
+  }
+  .navbar.open {
+    display: block;
+    width: 100%;
+    padding: none;
+  }
+  .navbar.open a {
+    display: block;
+    font-size: 1em;
+    width: 100%;
+  }
+  .navbar.open a:hover {
+    /* background-color: blue; */
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-line: 1px solid;
+  }
+  
+  .navbar.open .burger-toggle {
+    display: block;
+  }
+  .navbar.open .masthead {
+    display: block;
+  }
+  .navbar .burger {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: auto;
+    right: 0;
+    cursor: pointer;
+    background: unset;
+  }
+  .navbar .burger svg {
+    stroke: white;
+  }
+  .navbar button {
+    border: none;
+  }
+  #close-button {
+    display: none;
+  }
+  .navbar.open #open-button {
+    display: none;
+  }
+  .navbar.open #close-button {
+    display: block;
+  }
+}

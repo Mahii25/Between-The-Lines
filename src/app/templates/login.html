@@ -1,0 +1,36 @@
+{% extends 'boilerplate.html' %}
+
+{% block stylesheet %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/add_form.css') }}">{% endblock %}
+
+{% block content %}
+    <h1>{% block title %}Login {% endblock %}</h1>
+    {% if 'user' in session %}
+    <p>You are already logged in.</p>
+      {% else %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div>
+            {{ messages[0] }}. Try again or <a href="{{ url_for('sign_up') }}">sign up.</a>.
+        </div>
+    {% endif %}
+{% endwith %}
+<form method="post">
+    <p>
+        <label for="username">Username: </label>
+        <input type="text" name="username"
+               placeholder="Username">
+        </input>
+    </p>
+    <p>
+        <label for="password">Password: </label>
+        <input type="password" name="password"
+               placeholder="Password">
+        </input>
+    </p>
+    <p>
+        <button type="submit" class="button-basic">Submit</button>
+    </p>
+</form>
+<p> Don't have an account? <a href="{{ url_for('sign_up') }}">Sign up.</a>
+{% endif %}
+{% endblock %}
