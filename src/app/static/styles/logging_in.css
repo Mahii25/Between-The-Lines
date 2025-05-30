@@ -1,40 +1,29 @@
-.logged-in {
-    display: none;
+body.login-page {
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
-.loading-bar {
-    width: 98%;
-    height: 2em;
-    background-color: rgb(233, 233, 243);
-    border-radius: 1em;
-    border: 1px solid red;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-  }
+.login-container {
+  text-align: center;
+}
 
-  @keyframes loading {
-    from {width: 0%;}
-    to {width: 100%;}
-  }
-  
-  .loading-fill {
-    /* width: 0%; */
-    height: 100%;
-    background: white;
-      /* background: repeating-linear-gradient(
-    -55deg,
-    red,
-    red 1px,
-    white 1px,
-    white 15px
-  ); */
-    border-radius: 1em;
-    animation: loading 5s infinite;
-  }
+.spotify-button {
+  background-color: #1DB954;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .loading-text{
-    margin-left: auto;
-    margin-right: auto;
-  }
+.spotify-button:hover {
+  background-color: #1ed760;
+}

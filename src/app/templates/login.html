@@ -1,36 +1,22 @@
-{% extends 'boilerplate.html' %}
+<!DOCTYPE html>
+<html>
 
-{% block stylesheet %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/add_form.css') }}">{% endblock %}
+<head>
+    <title>Login - Music Recommender</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/logging_in.css') }}">
+</head>
 
-{% block content %}
-    <h1>{% block title %}Login {% endblock %}</h1>
-    {% if 'user' in session %}
-    <p>You are already logged in.</p>
-      {% else %}
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <div>
-            {{ messages[0] }}. Try again or <a href="{{ url_for('sign_up') }}">sign up.</a>.
-        </div>
-    {% endif %}
-{% endwith %}
-<form method="post">
-    <p>
-        <label for="username">Username: </label>
-        <input type="text" name="username"
-               placeholder="Username">
-        </input>
-    </p>
-    <p>
-        <label for="password">Password: </label>
-        <input type="password" name="password"
-               placeholder="Password">
-        </input>
-    </p>
-    <p>
-        <button type="submit" class="button-basic">Submit</button>
-    </p>
-</form>
-<p> Don't have an account? <a href="{{ url_for('sign_up') }}">Sign up.</a>
-{% endif %}
-{% endblock %}
+<body class="login-page">
+
+    <div class="login-container">
+        <h1>Welcome to Music Recommender</h1>
+        <a href="{{ auth_url }}">
+            <button class="spotify-button">Login with Spotify</button>
+        </a>
+    </div>
+
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
+</body>
+
+</html>

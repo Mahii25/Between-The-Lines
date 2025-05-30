@@ -1,16 +1,122 @@
-{% extends 'boilerplate.html' %}
+<!DOCTYPE html>
+<html>
 
-{% block stylesheet %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">{% endblock %}
+<head>
+  <title>Home - Music Recommender</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+</head>
 
-{% block content %}
-    <h1>{% block title %}Home {% endblock %}</h1>
-    <p>A music recommendation system</p>
-    <p>{{ welcome_message }}</p>
-    {% if logged_in == True %}
-      {% if num_rated <= 9 %}
-      <p><a href="{{ url_for('welcome') }}?username={{ username }}">Rate {{ 10 - num_rated }} more artists</a> to get recommendations! </p>
-      {% else %}
-      <a href="{{ url_for('recommendations') }}">Get recommendations.</a>
-      {% endif %}
-    {% endif %}
-{% endblock %}
+<body class="home-page">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-navbar">
+    <a class="navbar-brand" href="#">🎵 Music Recommender</a>
+    <div class="d-flex ms-auto">
+      <a href="{{ url_for('logout') }}" class="btn btn-outline-light">Logout</a>
+    </div>
+  </nav>
+
+
+  <!-- Main container -->
+  <div class="container-fluid py-4">
+
+    <!-- Recommended For You -->
+    <h2 class="section-title">Recommended For You</h2>
+    <div class="scrolling-wrapper">
+      {% for i in range(8) %}
+      <div class="card-item">
+        <img src="https://via.placeholder.com/200x200?text=Song+{{ i+1 }}" alt="Song">
+        <div class="card-info">
+          <p class="song-name">Song {{ i+1 }}</p>
+          <p class="artist-name">Artist {{ i+1 }}</p>
+        </div>
+      </div>    
+      {% endfor %}
+    </div>
+
+    <!-- Top 20 Latest Songs -->
+    <h2 class="section-title">Top 20 Latest Songs</h2>
+    <div class="row row-cols-2 row-cols-md-5 g-4 mb-5">
+      {% for i in range(20) %}
+      <div class="col">
+        <div class="card-horizontal d-flex align-items-center text-white p-2 rounded">
+          <img src="https://via.placeholder.com/80x80?text=Latest+{{ i+1 }}" alt="Latest" class="rounded">
+          <div class="card-text-block">
+            <p class="song-name mb-1">Latest Song {{ i+1 }}</p>
+            <p class="artist-name mb-0">Artist {{ i+1 }}</p>
+          </div>
+        </div>           
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Try Something New -->
+    <h2 class="section-title">Try Something New</h2>
+    <div class="scrolling-wrapper">
+      {% for i in range(6) %}
+      <div class="card-item">
+        <img src="https://via.placeholder.com/200x200?text=Song+{{ i+1 }}" alt="Song">
+        <div class="card-info">
+          <p class="song-name">Song {{ i+1 }}</p>
+          <p class="artist-name">Artist {{ i+1 }}</p>
+        </div>
+      </div>    
+      {% endfor %}
+    </div>
+
+    <!-- Craving Different Music -->
+    <h2 class="section-title">Craving Different Music</h2>
+    <div class="scrolling-wrapper">
+      {% for i in range(6) %}
+      <div class="card-item">
+        <img src="https://via.placeholder.com/200x200?text=Song+{{ i+1 }}" alt="Song">
+        <div class="card-info">
+          <p class="song-name">Song {{ i+1 }}</p>
+          <p class="artist-name">Artist {{ i+1 }}</p>
+        </div>
+      </div>    
+      {% endfor %}
+    </div>
+
+    <!-- Your Genres by New Artists -->
+    <h2 class="section-title">Your Genres by New Artists</h2>
+    <div class="scrolling-wrapper">
+      {% for i in range(6) %}
+      <div class="card-item">
+        <img src="https://via.placeholder.com/200x200?text=Song+{{ i+1 }}" alt="Song">
+        <div class="card-info">
+          <p class="song-name">Song {{ i+1 }}</p>
+          <p class="artist-name">Artist {{ i+1 }}</p>
+        </div>
+      </div>    
+      {% endfor %}
+    </div>
+
+    <!-- New Genres by Your Artists -->
+    <h2 class="section-title">New Genres by Your Artists</h2>
+    <div class="scrolling-wrapper">
+      {% for i in range(6) %}
+      <div class="card-item">
+        <img src="https://via.placeholder.com/200x200?text=Song+{{ i+1 }}" alt="Song">
+        <div class="card-info">
+            <p class="song-name">Song {{ i+1 }}</p>
+            <p class="artist-name">Artist {{ i+1 }}</p>
+        </div>
+      </div>    
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Page-specific JS -->
+  <script src="{{ url_for('static', filename='home.js') }}"></script>
+
+</body>
+
+</html>

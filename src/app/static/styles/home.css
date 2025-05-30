@@ -1,1 +1,108 @@
+/* Sticky navbar styles — same as before... */
 
+/* Body and section titles */
+body.home-page {
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.section-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Scrolling wrapper */
+.scrolling-wrapper {
+    display: flex;
+    overflow-x: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+}
+
+/* Spotify-style card for carousels */
+.card-item {
+    min-width: 200px;
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.card-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto 8px auto;
+    /* center image horizontally */
+    display: block;
+    /* ensures centering works */
+}
+
+.card-item:hover {
+    transform: scale(1.05);
+}
+
+.card-info {
+    padding: 0 5px;
+    text-align: center;
+}
+
+.song-name {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+    color: #fff;
+}
+
+.artist-name {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #b3b3b3;
+}
+
+/* Horizontal card for Top 20 */
+.card-horizontal {
+    background-color: #282828;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* add transform for hover visibility */
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* show pointer on hover */
+}
+
+.card-horizontal:hover {
+    background-color: #1a1a1a;
+    /* darker on hover for stronger visual */
+    transform: scale(0.97);
+    /* subtle zoom to make hover feel responsive */
+}
+
+.card-horizontal img {
+    flex: 0 0 auto;
+    /* do NOT grow or shrink */
+    width: 60px;
+    /* make it smaller */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+    /* spacing between img and text */
+}
+
+.card-horizontal .card-text-block {
+    flex: 1;
+    /* grow to fill remaining space */
+    text-align: left;
+}

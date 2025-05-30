@@ -1,4 +1,7 @@
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 import psycopg2
 from db.training_data.starter_data_to_sql import CSVToSQL
 import pathlib
