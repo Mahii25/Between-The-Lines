@@ -1,0 +1,23 @@
+/* Sticky navbar */
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 20px 15px;
+}
+
+.sticky-navbar.scrolled {
+    padding: 5px 15px;
+    background-color: #000000f0;
+    /* slightly transparent black */
+}
+
+.sticky-navbar .navbar-brand {
+    font-size: 1.8rem;
+    transition: font-size 0.3s ease;
+}
+
+.sticky-navbar.scrolled .navbar-brand {
+    font-size: 1.2rem;
+}

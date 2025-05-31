@@ -1,0 +1,154 @@
+body.home-page {
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.playlist-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.playlist-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.song-name {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+    color: #fff;
+}
+
+.artist-name {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #b3b3b3;
+}
+
+.card {
+    background-color: #282828;
+    border: none;
+}
+
+.card-title {
+    color: #fff;
+}
+
+.card-text {
+    color: #b3b3b3;
+}
+
+.player-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #181818;
+    color: #fff;
+    height: 70px;
+    border-top: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+}
+
+.footer-cover {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.footer-progress {
+    width: 300px;
+    max-width: 80%;
+}
+
+@media (max-width: 991.98px) {
+    .player-footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .footer-controls {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .footer-progress {
+        width: 90%;
+    }
+}
+
+.footer-progress-bar {
+    width: 60%;
+    height: 4px;
+    background-color: #535353;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: background-color 0.2s, width 0.2s;
+}
+
+.footer-progress-bar:hover .progress-fill {
+    background-color: #1db954;
+}
+
+.progress-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.footer-progress-bar:hover .progress-thumb {
+    opacity: 1;
+}
+
+.page-header-label {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.page-song-title {
+    font-weight: 700;
+}
+
+.artist-name-visible {
+    font-size: 1.1rem;
+    color: gray;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.album-cover-centered {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
